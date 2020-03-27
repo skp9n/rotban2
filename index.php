@@ -21,7 +21,7 @@ mysqli_close($link); ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>ROTBAN2.0</title>
+  <title>VATSIM Germany - ROTBAN2.0</title>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -69,7 +69,7 @@ mysqli_close($link); ?>
   </form>
   <footer class="text-center" style="padding: 40px;">
     <img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;" />
-    <p class="text-sm-center" style="font-family: 'PT Sans';margin-top: 2cm">
+    <p class="text-sm-center" style="font-family: 'PT Sans';margin-top: VATSIM Germany - 2cm">
       Service provided by VATSIM-Germany<br>
       Mail: events (at) vatsim-germany.org<br>
       Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
