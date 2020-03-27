@@ -31,7 +31,7 @@ mysqli_close($link); ?>
   <h1 class="text-center" style="font-family: 'PT Sans', sans-serif;background-color: #2b3089;color: #b9b8b8;padding: 30px;">VATSIM Germany Rotban 2.0</h1>
   <p class="text-center" style="font-family: 'PT Sans', sans-serif;color: #b9b8b8;padding: 0px;padding-right: 50px;padding-left: 50px;">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir einen Link für dein Rotban generieren. Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
   <form id="rotban_form">
-    <div class="text-center"><input type="text" id="cid" placeholder="VATSIM-ID" inputmode="numeric" style="font-family: 'PT Sans', sans-serif;" minlength="6" maxlength="7"></div>
+    <div class="text-center"><input type="text" id="cid" placeholder="VATSIM-ID" name="cid" inputmode="numeric" style="font-family: 'PT Sans', sans-serif;" minlength="6" maxlength="7"></div>
     <div class="row justify-content-center">
       <div class="col-auto">
         <table class="table-responsive table-borderless mx-auto w-auto">
@@ -46,7 +46,7 @@ mysqli_close($link); ?>
             if(mysqli_num_rows($images_result) > 0){
               while($row = mysqli_fetch_array($images_result)){
                 echo "<tr>";
-                echo '<td style="color: #b9b8b8;padding:1cm; width: 10%;"><div class="form-check"><input class="form-check-input" type="checkbox" id="img' . $row['id'] . '" value="0"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
+                echo '<td style="color: #b9b8b8;padding:1cm; width: 10%;"><div class="form-check"><input class="form-check-input" type="checkbox" name=' . $row['id'] . '" id="img' . $row['id'] . '" value="0"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
                 echo '<td><img max-height="80px" max-width="400px" src="' . $row['uri'] . '"/></td>';
                 echo "</tr>";
               }
