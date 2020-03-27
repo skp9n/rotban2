@@ -29,6 +29,6 @@ else {
 }
 
 mysqli_free_result($images_result);
-}
+
 
 var_dump($images_result);
