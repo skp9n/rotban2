@@ -63,7 +63,7 @@ mysqli_close($link); ?>
     <div class="text-break text-center"><button class="btn btn-primary" type="submit" style="font-family: 'PT Sans', sans-serif;"style="margin-top: 1.4rem;">Rotbanlink generieren</button></div>
   </form>
   <footer class="text-center" style="padding: 40px;"><img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;" /></footer>
-  <div class="modal fade" role="dialog" tabindex="-1">
+  <div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -80,7 +80,10 @@ mysqli_close($link); ?>
       <script type="text/javascript">$(document).ready(function() {
         $('#rotban_form').submit(function(event) {
           event.preventDefault();
-          console.log( $( this ).serializeArray() );
+          $.post( "create_url.php", $( "#rotban_form" ).serializeArray() ).done(function(data) {
+            console.log(data);
+            //$('#LinkModal').show();
+});;
         });
       });
       </script>
