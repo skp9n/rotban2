@@ -71,7 +71,7 @@ mysqli_close($link); ?>
           <div class="modal-body">
             <p class="text-dark">Dies ist dein generierter Rotban Link.</p><input type="text" style="width: 100%;font-family: 'PT Sans', sans-serif;" name="rotban_url" id="rotban_url" readonly></div>
             <div class="modal-footer">
-              <button onclick="copyToClipboard('#rotban_url')" class="btn btn-light btn-primary" type="button" data-dismiss="modal">In Zwischenablage kopieren</button>
+              <button onclick="copyToClipboard('#rotban_url')" class="btn btn-primary" type="button" data-dismiss="modal">In Zwischenablage kopieren</button>
               <button class="btn btn-light" type="button" data-dismiss="modal">OK</button>
             </div>
           </div>
