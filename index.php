@@ -80,7 +80,7 @@ mysqli_close($link); ?>
       <script type="text/javascript">$(document).ready(function() {
         $('#rotban_form').submit(function(event) {
           event.preventDefault();
-          console.log("Hello World");
+          console.log( $( this ).serializeArray() );
         });
       });
       </script>
