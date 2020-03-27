@@ -41,25 +41,25 @@ mysqli_close($link); ?>
             </thead>
             <tbody>
 
-<?php
-  if(mysqli_num_rows($images_result) > 0){
-    while($row = mysqli_fetch_array($images_result)){
-      echo "<tr>";
-        echo '<td style="color: #b9b8b8;padding:1cm; width: 10%;"><div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
-        echo '<td><img max-height="80px" max-width="400px" src="' . $row['uri'] . '"/></td>';
-      echo "</tr>";
-     }
-     echo "</table>";
-    // Free result set
-    mysqli_free_result($images_result);
-    }
+          <?php
+            if(mysqli_num_rows($images_result) > 0){
+              while($row = mysqli_fetch_array($images_result)){
+                echo "<tr>";
+                  echo '<td style="color: #b9b8b8;padding:1cm; width: 10%;"><div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
+                  echo '<td><img max-height="80px" max-width="400px" src="' . $row['uri'] . '"/></td>';
+                echo "</tr>";
+               }
+               echo "</table>";
+              // Free result se
+              mysqli_free_result($images_result);
+              }
+          ?>
 
-?>
         </tbody>
         </table>
     </div>
   </div>
-    <div class="text-break text-center"><button class="btn btn-primary" type="submit" style="font-family: 'PT Sans', sans-serif;padding=35px;">Rotbanlink generieren</button></div>
+    <div class="text-break text-center"><button class="btn btn-primary" type="submit" style="font-family: 'PT Sans', sans-serif;"style="margin-top: 1.4rem;">Rotbanlink generieren</button></div>
     <footer class="text-center" style="padding: 40px;"><img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;" /></footer>
     <div class="modal fade" role="dialog" tabindex="-1">
         <div class="modal-dialog" role="document">
