@@ -69,9 +69,9 @@ mysqli_close($link); ?>
         <div class="modal-header">
           <h4 class="modal-title text-success">Generierung erfolgreich</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
           <div class="modal-body">
-            <p class="text-dark">Dies ist dein generierter Rotban Link. Er wurde bereits in die Zwischenablage kopiert</p><input type="text" style="width: 100%;font-family: 'PT Sans', sans-serif;" name="rotban_url" id="rotban_url" readonly></div>
+            <p class="text-dark">Dies ist dein generierter Rotban Link.</p><input type="text" style="width: 100%;font-family: 'PT Sans', sans-serif;" name="rotban_url" id="rotban_url" readonly></div>
             <div class="modal-footer">
-              <button onclick="copyToClipboard('#rotban_url')" class="btn btn-light" type="button" data-dismiss="modal">In Zwischenablage kopieren</button>
+              <button onclick="copyToClipboard('#rotban_url')" class="btn btn-light btn-primary" type="button" data-dismiss="modal">In Zwischenablage kopieren</button>
               <button class="btn btn-light" type="button" data-dismiss="modal">OK</button>
             </div>
           </div>
@@ -86,19 +86,20 @@ mysqli_close($link); ?>
           $.post( "./create_url.php", $( "#rotban_form" ).serializeArray() ).done(function(data) {
             $("#rotban_url").attr("value", data);
             $('#LinkModal').modal('show');
-            var copyText = document.getElementById("rotban_url");
-            /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-            /* Copy the text inside the text field */
-            document.execCommand("copy");
-            /* Alert the copied text */
-            alert("Copied the text: " + copyText.value);
+
+
           });;
         });
       });
       function copyToClipboard(element) {
-
+        var copyText = document.getElementById("rotban_url");
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        /* Alert the copied text */
+        //alert("Copied the text: " + copyText.value);
       }
       </script>
     </body>
