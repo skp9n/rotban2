@@ -84,7 +84,7 @@ mysqli_close($link); ?>
             $("#rotban_url").attr("value", data);
             $('#LinkModal').modal('show');
 
-            var copyText = document.getElementById("rotban_url");
+            var copyText = document.getElementById('rotban_url');
             /* Select the text field */
             copyText.select();
             copyText.setSelectionRange(0, 99999); /*For mobile devices*/
