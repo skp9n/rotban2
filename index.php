@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+<?php <
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "rotban", "KYNfRWbKbTiMHEJW", "rotban");
+
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
+
+// Attempt select query execution
+$sql = "SELECT * FROM image";
+$images_result = mysqli_query($link, $sql);
+
+// Close connection
+mysqli_close($link);
+
+
+echo <!DOCTYPE html>
 <html style="color: #2b3089;background-color: #2b3089;">
 
 <head>
@@ -21,14 +40,20 @@
                     <th style="font-family: 'PT Sans', sans-serif;color: #b9b8b8;">Auswahl</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td style="color: #b9b8b8;width: 30%;">
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">VATGER Test</label></div>
-                    </td>
-                    <td style="color: #b9b8b8;"><img style="height: 30px;"></td>
-                </tr>
-                <tr></tr>
+            <tbody>;
+
+            if(mysqli_num_rows($images_result) > 0){
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo '<td style="color: #b9b8b8;width: 30%;">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div>';
+                        echo '<td style="color: #b9b8b8;><img src="' . $row['uri'] . "></td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            }
             </tbody>
         </table>
     </div>
@@ -51,3 +76,4 @@
 </body>
 
 </html>
+?>
