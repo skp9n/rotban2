@@ -38,7 +38,7 @@ mysqli_close($link); ?>
                     <th style="font-family: 'PT Sans', sans-serif;color: #b9b8b8;">Auswahl</th>
                 </tr>
             </thead>
-            <tbody>;
+            <tbody>
 
 <?php
   if(mysqli_num_rows($images_result) > 0){
