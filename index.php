@@ -92,7 +92,7 @@ mysqli_close($link); ?>
       function copyToClipboard(element) {
         var $temp = $("<input>");
         $("body").append($temp);
-        $temp.val($(element).value()).select();
+        $temp.val($(element).val()).select();
         document.execCommand("copy");
         $temp.remove();
       }
