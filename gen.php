@@ -17,7 +17,7 @@ $sql = "SELECT `cid_required`, `uri` FROM image where id = $imageid";
 $images_result = mysqli_query($link, $sql);
 
 // Close connection
-mysqli_close($link)
+mysqli_close($link);
 
 if(mysqli_num_rows($images_result) > 0){
   while($row = mysqli_fetch_array($images_result)){
