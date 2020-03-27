@@ -6,7 +6,7 @@ foreach ($_POST as $key => $value) {
     // $arr[3] wird mit jedem Wert von $arr aktualisiert...
 
     if( $key == "cid"){
-      if( $value != ""){
+      if( $value != null){
         $url=$url . "cid=" . $value;
       }
     }
