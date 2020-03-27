@@ -82,7 +82,7 @@ mysqli_close($link); ?>
           event.preventDefault();
           $.post( "./create_url.php", $( "#rotban_form" ).serializeArray() ).done(function(data) {
             console.log(data);
-            //$('#LinkModal').show();
+            $('#LinkModal').show();
 });;
         });
       });
