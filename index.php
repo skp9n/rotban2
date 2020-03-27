@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 $link = mysqli_connect("localhost", "rotban", "KYNfRWbKbTiMHEJW", "rotban");
@@ -13,10 +13,9 @@ $sql = "SELECT * FROM image";
 $images_result = mysqli_query($link, $sql);
 
 // Close connection
-mysqli_close($link);
+mysqli_close($link); ?>
 
-
-echo <!DOCTYPE html>
+<!DOCTYPE html>
 <html style="color: #2b3089;background-color: #2b3089;">
 
 <head>
@@ -41,18 +40,21 @@ echo <!DOCTYPE html>
             </thead>
             <tbody>;
 
-            if(mysqli_num_rows($images_result) > 0){
-                while($row = mysqli_fetch_array($result)){
-                    echo "<tr>";
-                        echo '<td style="color: #b9b8b8;width: 30%;"><div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
-                        echo '<td style="color: #b9b8b8;><img src="' . $row['uri'] . '></td>';
-                    echo "</tr>";
-                }
-                echo "</table>";
-                // Free result set
-                mysqli_free_result($result);
-            }
-echo        </tbody>
+<?php
+  if(mysqli_num_rows($images_result) > 0){
+    while($row = mysqli_fetch_array($result)){
+      echo "<tr>";
+        echo '<td style="color: #b9b8b8;width: 30%;"><div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
+        echo '<td style="color: #b9b8b8;><img src="' . $row['uri'] . '></td>';
+      echo "</tr>";
+     }
+     echo "</table>";
+    // Free result set
+    mysqli_free_result($result);
+    }
+
+?>
+        </tbody>
         </table>
     </div>
     <div class="text-break text-center"><button class="btn btn-primary" type="submit" style="font-family: 'PT Sans', sans-serif;">Rotbanlink generieren</button></div>
