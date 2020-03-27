@@ -80,7 +80,7 @@ mysqli_close($link); ?>
       <script type="text/javascript">$(document).ready(function() {
         $('#rotban_form').submit(function(event) {
           event.preventDefault();
-          $.post( "create_url.php", $( "#rotban_form" ).serializeArray() ).done(function(data) {
+          $.post( "./create_url.php", $( "#rotban_form" ).serializeArray() ).done(function(data) {
             console.log(data);
             //$('#LinkModal').show();
 });;
