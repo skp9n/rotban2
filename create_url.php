@@ -14,4 +14,4 @@ $url = "https://rotban2.vatsim-germany.org/gen.php?"
     }
 }*/
 
-    return $url;
+    echo $url;
