@@ -3,6 +3,8 @@
 $cid=$_GET['cid'];
 $images=explode("_",substr($_GET['img'], 1) );
 
+echo $images;
+
 $random = mt_rand(0,sizeof($images) - 1 );
 
 require_once('db_conn.php');
@@ -21,7 +23,8 @@ mysqli_close($link);
 
 if(mysqli_num_rows($images_result) > 0){
   while($row = mysqli_fetch_array($images_result)){
-    header("Location: " . $row['uri'] );
+    echo $row['uri'];
+    //header("Location: " . $row['uri'] );
   }  // Free result se
 }
 else {
