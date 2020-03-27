@@ -31,7 +31,8 @@ mysqli_close($link); ?>
     <h1 class="text-center" style="font-family: 'PT Sans', sans-serif;background-color: #2b3089;color: #b9b8b8;padding: 30px;">VATSIM Germany Rotban 2.0</h1>
     <p class="text-center" style="font-family: 'PT Sans', sans-serif;color: #b9b8b8;padding: 0px;padding-right: 50px;padding-left: 50px;">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir einen Link für dein Rotban generieren. Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
     <div class="text-center"><input type="text" name="id" placeholder="VATSIM-ID" inputmode="numeric" style="font-family: 'PT Sans', sans-serif;" minlength="6" maxlength="7"></div>
-    <div class="table-responsive table-borderless">
+    <div class="row justify-content-center">
+    <div class="col-auto">
         <table class="table-responsive table-borderless mx-auto w-auto">
             <thead>
                 <tr>
@@ -57,6 +58,7 @@ mysqli_close($link); ?>
         </tbody>
         </table>
     </div>
+  </div>
     <div class="text-break text-center"><button class="btn btn-primary" type="submit" style="font-family: 'PT Sans', sans-serif;">Rotbanlink generieren</button></div>
     <footer class="text-center" style="padding: 40px;"><img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;" /></footer>
     <div class="modal fade" role="dialog" tabindex="-1">
