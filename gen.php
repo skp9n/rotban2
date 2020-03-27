@@ -24,7 +24,9 @@ mysqli_close($link);
 if(mysqli_num_rows($images_result) > 0){
   while($row = mysqli_fetch_array($images_result)){
     //echo $row['uri'];
-    header("Location: " . $row['uri'] );
+
+    header("Location: " . str_replace("\$cid",url_encode($cid),$row['uri']) );
+
   }  // Free result se
 }
 else {

@@ -47,7 +47,12 @@ mysqli_close($link); ?>
               while($row = mysqli_fetch_array($images_result)){
                 echo "<tr>";
                 echo '<td style="color: #b9b8b8;padding:1cm; width: 10%;"><div class="form-check"><input class="form-check-input" type="checkbox" name=' . $row['id'] . ' id="img' . $row['id'] . '" value="0"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
-                echo '<td><img max-height="80px" max-width="400px" src="' . $row['uri'] . '"/></td>';
+                if($row['cid_required']!=0){
+                  echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid","",$row['uri']) . '"/></td>';
+                }
+                else {
+                  echo '<td><img max-height="80px" max-width="400px" src="' . $row['uri'] . '"/></td>';
+                }
                 echo "</tr>";
               }
               echo "</table>";
