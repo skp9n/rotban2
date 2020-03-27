@@ -59,7 +59,7 @@ mysqli_close($link); ?>
         </table>
     </div>
   </div>
-    <div class="text-break text-center"><button class="btn btn-primary" type="submit" style="font-family: 'PT Sans', sans-serif;">Rotbanlink generieren</button></div>
+    <div class="text-break text-center"><button class="btn btn-primary" type="submit" style="font-family: 'PT Sans', sans-serif;padding=15px;">Rotbanlink generieren</button></div>
     <footer class="text-center" style="padding: 40px;"><img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;" /></footer>
     <div class="modal fade" role="dialog" tabindex="-1">
         <div class="modal-dialog" role="document">
