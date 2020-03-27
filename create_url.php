@@ -1,7 +1,8 @@
 <?php
 
 $url="https://rotban2.vatsim-germany.org/gen.php?";
-$cid = $_POST[0]['cid'];
+
+$cid = $_POST['cid'];
 
 if($cid != null){
   $url=$url . "cid=" . $cid;
