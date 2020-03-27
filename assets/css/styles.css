@@ -1,0 +1,3 @@
+.table-borderless tbody + tbody, .table-borderless td, .table-borderless th, .table-borderless thead th {
+  vertical-align: middle;
+}
