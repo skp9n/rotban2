@@ -27,8 +27,4 @@ if(mysqli_num_rows($images_result) > 0){
 else {
   // code...
 }
-
 mysqli_free_result($images_result);
-
-
-var_dump($images_result);
