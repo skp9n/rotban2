@@ -1,2 +1,2 @@
 <?php
-mysqli_connect("localhost", "rotban", "KYNfRWbKbTiMHEJW", "rotban");
+$link = mysqli_connect("localhost", "rotban", "KYNfRWbKbTiMHEJW", "rotban");
