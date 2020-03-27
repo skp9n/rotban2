@@ -90,11 +90,14 @@ mysqli_close($link); ?>
         });
       });
       function copyToClipboard(element) {
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($(element).val()).select();
+        var copyText = document.getElementById("rotban_url");
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        /* Copy the text inside the text field */
         document.execCommand("copy");
-        $temp.remove();
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
       }
       </script>
     </body>
