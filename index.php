@@ -44,7 +44,7 @@ mysqli_close($link); ?>
   if(mysqli_num_rows($images_result) > 0){
     while($row = mysqli_fetch_array($images_result)){
       echo "<tr>";
-        echo '<td style="color: #b9b8b8;width: 30%;"><div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
+        echo '<td style="color: #b9b8b8;width: 10%;"><div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
         echo '<td><img max-height="80px" max-width="400px" src="' . $row['uri'] . '"/></td>';
       echo "</tr>";
      }
