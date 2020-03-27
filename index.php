@@ -78,7 +78,10 @@ mysqli_close($link); ?>
       <script src="assets/bootstrap/js/bootstrap.min.js"></script>
       <script src="assets/js/bs-init.js"></script>
       <script type="text/javascript">$(document).ready(function() {
-        console.log("Hello World");
+        $('#rotban_form').submit(function(event) {
+          event.preventDefault();
+          console.log("Hello World");
+        });
       });
       </script>
     </body>
