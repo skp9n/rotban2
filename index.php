@@ -54,7 +54,7 @@ echo <!DOCTYPE html>
                 // Free result set
                 mysqli_free_result($result);
             }
-            </tbody>
+echo        </tbody>
         </table>
     </div>
     <div class="text-break text-center"><button class="btn btn-primary" type="submit" style="font-family: 'PT Sans', sans-serif;">Rotbanlink generieren</button></div>
