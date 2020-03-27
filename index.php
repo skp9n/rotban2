@@ -46,11 +46,12 @@ mysqli_close($link); ?>
       echo "<tr>";
         echo '<td style="color: #b9b8b8;width: 30%;"><div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
         echo '<td style="color: #b9b8b8;><img src="' . $row['uri'] . '></td>';
+        echo '<td>' . $row['uri'] . '</td>';
       echo "</tr>";
      }
      echo "</table>";
     // Free result set
-    mysqli_free_result($result);
+    mysqli_free_result($images_result);
     }
 
 ?>
