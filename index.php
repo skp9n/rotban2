@@ -67,7 +67,14 @@ mysqli_close($link); ?>
     </div>
     <div class="text-break text-center" style="margin:1.4rem"><button class="btn btn-success btn-lg" type="submit" style="font-family: 'PT Sans', sans-serif;">Rotbanlink generieren</button></div>
   </form>
-  <footer class="text-center" style="padding: 40px;"><img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;" /></footer>
+  <footer class="text-center" style="padding: 40px;">
+    <img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;" />
+    <p class="text-sm-center" style="font-family: 'PT Sans',">
+      Service provided by VATSIM-Germany<br>
+      Mail: events (at) vatsim-germany.org<br>
+      Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
+    </p>
+  </footer>
   <div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -91,8 +98,6 @@ mysqli_close($link); ?>
           $.post( "./create_url.php", $( "#rotban_form" ).serializeArray() ).done(function(data) {
             $("#rotban_url").attr("value", data);
             $('#LinkModal').modal('show');
-
-
           });;
         });
       });
