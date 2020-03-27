@@ -69,7 +69,7 @@ mysqli_close($link); ?>
   </form>
   <footer class="text-center" style="padding: 40px;">
     <img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;" />
-    <p class="text-sm-center" style="font-family: 'PT Sans';margin-top: VATSIM Germany - 2cm">
+    <p class="text-sm-center" style="font-family: 'PT Sans';margin-top: 2cm">
       Service provided by VATSIM-Germany<br>
       Mail: events (at) vatsim-germany.org<br>
       Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
