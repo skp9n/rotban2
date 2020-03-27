@@ -1,6 +1,6 @@
 <?php
 
-$url = "https://rotban2.vatsim-germany.org/gen.php?"
+$url="https://rotban2.vatsim-germany.org/gen.php?";
 
 /*foreach ($_POST as $key => $value) {
     // $arr[3] wird mit jedem Wert von $arr aktualisiert...
@@ -14,4 +14,4 @@ $url = "https://rotban2.vatsim-germany.org/gen.php?"
     }
 }*/
 
-    echo $url;
+echo $url;
