@@ -69,7 +69,7 @@ mysqli_close($link); ?>
         <div class="modal-header">
           <h4 class="modal-title text-success">Generierung erfolgreich</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
           <div class="modal-body">
-            <p class="text-dark">Dies ist dein generierter Rotban Link. Er wurde bereits in die Zwischenablage kopiert</p><input type="url" style="width: 100%;font-family: 'PT Sans', sans-serif;" name="rotban_url"></div>
+            <p class="text-dark">Dies ist dein generierter Rotban Link. Er wurde bereits in die Zwischenablage kopiert</p><input type="text" style="width: 100%;font-family: 'PT Sans', sans-serif;" name="rotban_url" id="rotban_url" readonly></div>
             <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">OK</button></div>
           </div>
         </div>
@@ -81,9 +81,9 @@ mysqli_close($link); ?>
         $('#rotban_form').submit(function(event) {
           event.preventDefault();
           $.post( "./create_url.php", $( "#rotban_form" ).serializeArray() ).done(function(data) {
-            console.log(data);
+            $("#rotban_url").attr("value", data);
             $('#LinkModal').modal('show');
-});;
+          });;
         });
       });
       </script>
