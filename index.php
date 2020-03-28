@@ -9,7 +9,7 @@ if($link === false){
 }
 
 // Attempt select query execution
-$sql = "SELECT * FROM image where active <> 0";
+$sql = "SELECT * FROM image where active <> 0 ORDER BY sort ASC";
 $images_result = mysqli_query($link, $sql);
 
 // Close connection
