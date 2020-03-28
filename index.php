@@ -29,7 +29,7 @@ mysqli_close($link); ?>
 
 <body style="background-color: #2b3089;color: #b9b8b8;">
   <h1 class="text-center" style="font-family: 'PT Sans', sans-serif;background-color: #2b3089;color: #b9b8b8;padding: 30px;">VATSIM Germany Rotban 2.0</h1>
-  <p class="text-center" style="font-family: 'PT Sans', sans-serif;color: #b9b8b8;padding: 0px;padding-right: 50px;padding-left: 50px;width: 600px">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir einen Link für dein Rotban generieren. Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
+  <p class="text-center" style="font-family: 'PT Sans', sans-serif;color: #b9b8b8;padding: 0px;padding-right: 50px;padding-left: 50px;">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir einen Link für dein Rotban generieren. Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
   <form id="rotban_form">
     <div class="text-center"><input type="text" id="cid" placeholder="VATSIM-ID" name="cid" inputmode="numeric" style="font-family: 'PT Sans', sans-serif;" minlength="6" maxlength="7"></div>
     <div class="row justify-content-center">
