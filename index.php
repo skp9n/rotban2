@@ -43,14 +43,12 @@ mysqli_close($link);
 <form id="rotban_form">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col" name="top">
                 <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
                 <br>
                 <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
                 <p class="text-center">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse
-                    dir
-                    einen
-                    Link für dein Rotban generieren.<br>
+                    dir einen Link für dein Rotban generieren.<br>
                     Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
             </div>
         </div>
@@ -59,21 +57,21 @@ mysqli_close($link);
                 <div class="container pt-5 sticky">
                     <nav class="nav flex-column flex-fill border-3 rounded">
 
-                        <a class="nav-link active font-weight-bold text-vatger-secondary" href="#">TOP</a>
+                        <a class="nav-link active font-weight-bold text-vatger-secondary" href="#top">TOP</a>
 
                         <?php
                         foreach ($groups as $group) {
-                            echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#">' . $group['description'] . '</a>';
+                            echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#' . $group . ['id'] . '">' . $group['description'] . '</a>';
                         }
                         ?>
-
+                        <a class="nav-link active font-weight-bold text-success" href="#gen">Generieren</a>
                     </nav>
                 </div>
             </div>
             <div class="col">
                 <?php
                 foreach ($groups as $group) {
-                    echo '<div class="container mt-5 justify-content-center" style="min-height: 10cm">';
+                    echo '<div class="container mt-5 justify-content-center" name="' . $groups['description'] . '">';
                     echo '<h3>' . $group['description'] . '</h3>';
                     echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
                     foreach ($images as $image) {
@@ -100,7 +98,7 @@ mysqli_close($link);
                 ?>
             </div>
         </div>
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center" name="gen">
             <div class="col-3 justify-content-center align-items-center text-center">
                 <input class="form-control mt-3 text-center" type="text" id="cid" name="cid" value=""
                        placeholder="VATSIM-ID"
