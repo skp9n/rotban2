@@ -44,7 +44,7 @@ mysqli_close($link);
     <div class="container">
         <div class="row">
             <div class="col" id="top">
-                <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
+                <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5">
                 <br>
                 <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
                 <p class="text-center">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse
@@ -73,7 +73,7 @@ mysqli_close($link);
                 foreach ($groups as $group) {
                     echo '<div class="container mt-5 justify-content-center" id="' . $group['id'] . '">';
                     echo '<h3>' . $group['description'] . '</h3>';
-                    echo '<div class="container ml-2 mt-2" style="min-height: 10cm">';
+                    echo '<div class="container ml-2 mt-2">';
                     foreach ($images as $image) {
                         if ($image['id_group'] == $group['id']) {
                             echo '<div class="row mt-2">';
@@ -131,12 +131,14 @@ mysqli_close($link);
 </div>
 </body>
 <footer>
-    <div class="container pt-10">
-        <p class="text-sm-center">
-            Service provided by VATSIM-Germany<br>
-            Mail: events (at) vatsim-germany.org<br>
-            Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
-        </p>
+    <div class="container">
+        <div class="container mt-5">
+            <p class="text-sm-center">
+                Service provided by VATSIM-Germany<br>
+                Mail: events (at) vatsim-germany.org<br>
+                Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
+            </p>
+        </div>
     </div>
 </footer>
 <script src="assets/js/jquery.min.js"></script>
