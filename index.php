@@ -99,8 +99,8 @@ mysqli_close($link);
         </div>
     </div>
     <div class="row">
-        <div class="col col-3 text-break text-center">
-            <input class="form-control mt-3 w-25 text-center" type="text" id="cid" name="cid" value=""
+        <div class="col col-3 justify-content-center align-items-center">
+            <input class="form-control mt-3 text-center" type="text" id="cid" name="cid" value=""
                    placeholder="VATSIM-ID"
                    inputmode="numeric" minlength="6" maxlength="7">
 
