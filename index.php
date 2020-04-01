@@ -75,23 +75,25 @@ mysqli_close($link);
                     echo '<h3>' . $group['description'] . '</h3>';
                     echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
                     foreach ($images as $image) {
-                        echo '<tr>';
-                        echo '<td class="align-middle"><div class="form-check text-center">';
-                        echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-vatger-secondary" for="formCheck-1">' . $image['description'] . '</label>';
-                        echo '</div></td>';
+                        if ($image['id_group'] == $group['id']) {
+                            echo '<tr>';
+                            echo '<td class="align-middle"><div class="form-check text-center">';
+                            echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-vatger-secondary" for="formCheck-1">' . $image['description'] . '</label>';
+                            echo '</div></td>';
 
-                        if ($image['uri_preview'] == NULL or $image['uri_preview'] == "") {
-                            $uri = $image['uri'];
-                        } else {
-                            $uri = $image['uri_preview'];
-                        }
+                            if ($image['uri_preview'] == NULL or $image['uri_preview'] == "") {
+                                $uri = $image['uri'];
+                            } else {
+                                $uri = $image['uri_preview'];
+                            }
 
-                        if ($image['cid_required'] != 0) {
-                            echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></td>';
-                        } else {
-                            echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
+                            if ($image['cid_required'] != 0) {
+                                echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></td>';
+                            } else {
+                                echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
+                            }
+                            echo '</tr>';
                         }
-                        echo '</tr>';
                     }
                     echo '</tbody> </table></div></div>';
                 }
