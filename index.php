@@ -30,19 +30,39 @@ mysqli_close($link); ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<div class="sidenav">
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-</div>
+
 <body style="background-color: #2b3089;color: #b9b8b8">
 <div class="container">
-    <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
-    <br>
-    <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
-    <p class="text-center">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir einen
-        Link für dein Rotban generieren.<br>
-        Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
+    <div class="row">
+        <div class="col">
+            <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
+            <br>
+            <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
+            <p class="text-center">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir
+                einen
+                Link für dein Rotban generieren.<br>
+                Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+    </div>
+</div>
 </div>
 </body>
