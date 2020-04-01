@@ -39,7 +39,6 @@ mysqli_close($link); ?>
     </div>
   </div>
   <br>
-  <br>
 
   <div class="row justify-content-center">
     <div class="col-auto">
