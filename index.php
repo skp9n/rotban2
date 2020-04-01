@@ -167,4 +167,6 @@ mysqli_close($link);
     }
 
 
+</script>
+</html>
 
