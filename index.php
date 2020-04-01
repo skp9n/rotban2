@@ -31,9 +31,9 @@ mysqli_close($link); ?>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body style="background-color: #2b3089;color: #b9b8b8">
-<div class="container text-*-center">
+<div class="container">
     <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
-    <h1>My First Bootstrap Page</h1>
-    <p>This is some text.</p>
+    <h1 class="text-center">My First Bootstrap Page</h1>
+    <p class="text-center">This is some text.</p>
 </div>
 </body>
