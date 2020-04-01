@@ -22,15 +22,12 @@ $groups_result = mysqli_query($link, $sql);
 $groups = mysqli_fetch_all($groups_result, MYSQLI_ASSOC);
 
 
-var_dump($images);
-//var_dump($groups);
-
 // Close connection
 mysqli_close($link);
 
 ?>
 
-<!--
+
 <!DOCTYPE html>
 <html>
 <head>
