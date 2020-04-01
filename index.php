@@ -109,9 +109,8 @@ mysqli_close($link);
             </div>
         </div>
 </form>
-<footer class="text-center mt-10">
-    <img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;"/>
-    <p class="text-sm-center">
+<footer class="text-center">
+    <p class="text-sm-center mt-10">
         Service provided by VATSIM-Germany<br>
         Mail: events (at) vatsim-germany.org<br>
         Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
