@@ -28,7 +28,7 @@ while ($row = mysqli_fetch_array($groups_result)) {
 }
 
 var_dump($images);
-var_dump($groups);
+//var_dump($groups);
 
 // Close connection
 mysqli_close($link);
