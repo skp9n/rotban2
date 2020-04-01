@@ -73,6 +73,7 @@ mysqli_close($link);
                 foreach ($groups as $group) {
                     echo '<div class="container mt-5 justify-content-center" name="' . $group['id'] . '">';
                     echo '<h3>' . $group['description'] . '</h3>';
+                    echo '<div class="container ml-5">';
                     foreach ($images as $image) {
                         if ($image['id_group'] == $group['id']) {
                             echo '<div class="row mt-2">';
@@ -94,7 +95,7 @@ mysqli_close($link);
                             echo '</div>';
                         }
                     }
-                    echo '</div>';
+                    echo '</div></div>';
                 }
                 ?>
             </div>
