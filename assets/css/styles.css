@@ -13,7 +13,17 @@
     background-color: #b9b8b8;
 }
 
+.text-secondary {
+    color: #b9b8b8;
+}
+
 body {
     background-color: #2b3089;
     color: #b9b8b8;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
