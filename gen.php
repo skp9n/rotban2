@@ -24,18 +24,9 @@ mysqli_close($link);
 if(mysqli_num_rows($images_result) > 0){
   while($row = mysqli_fetch_array($images_result)){
       //echo $row['uri'];
-      $url = str_replace("\$cid", urlencode($cid), $row['uri']);
-      $im = imagecreatefromstring(file_get_contents($url));
-      $mime = mime_content_typ($url);
-      header('Content-type:' . $mime);
-
-      if ($mime == "image/gif") {
-          imagegif($im);
-      } else {
-          imagepng($im);
-      }
-      imagedestroy($im);
+      header("Location: " . str_replace("\$cid", urlencode($cid), $row['uri']));
   }  // Free result se
+} else {
+    // code...
 }
 mysqli_free_result($images_result);
-
