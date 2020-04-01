@@ -1,4 +1,19 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 .border-3 {
     border-style: solid;
     border-width: 3px;
+}
+
+.bg-primary {
+    background-color: #2b3089;
+}
+
+.bg-secondary {
+    background-color: #b9b8b8;
+}
+
+body {
+    background-color: #2b3089;
+    color: #b9b8b8;
 }

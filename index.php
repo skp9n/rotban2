@@ -20,8 +20,7 @@ $groups_result = mysqli_query($link, $sql);
 mysqli_close($link); ?>
 
 <!DOCTYPE html>
-<html style="color: #2b3089;background-color: #2b3089;">
-
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -31,9 +30,9 @@ mysqli_close($link); ?>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="background-color: #2b3089;color: #b9b8b8">
-<div class="container ">
-    <div class="row border-3 border-dark rounded">
+<body>
+<div class="container">
+    <div class="row border-3 border-secondary rounded">
         <div class="col">
             <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
             <br>
