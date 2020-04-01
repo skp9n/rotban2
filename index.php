@@ -109,18 +109,17 @@ mysqli_close($link);
             </div>
         </div>
 </form>
-<div class="text-center">
-    <div class="container">
-        <p class="text-sm-center">
-            Service provided by VATSIM-Germany<br>
-            Mail: events (at) vatsim-germany.org<br>
-            Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
-        </p>
-    </div>
-    </footer>
-    <div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
+<div class="container mt-10">
+    <p class="text-sm-center">
+        Service provided by VATSIM-Germany<br>
+        Mail: events (at) vatsim-germany.org<br>
+        Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
+    </p>
+</div>
+</footer>
+<div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title text-success">Generierung erfolgreich</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
