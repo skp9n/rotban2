@@ -21,7 +21,7 @@ $groups_result = mysqli_query($link, $sql);
 $groups = mysqli_fetch_array($groups_result);
 
 //var_dump($images);
-var_dump($groups);
+var_dump(array_keys($groups));
 
 // Close connection
 mysqli_close($link);
