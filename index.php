@@ -22,7 +22,7 @@ while ($row = mysqli_fetch_array($images_result)) {
 $sql = "SELECT * FROM `group` where exists ( select * from `image` where `id_group` = `group`.`id` )";
 $groups_result = mysqli_query($link, $sql);
 
-$images = array();
+$groups = array();
 while ($row = mysqli_fetch_array($groups_result)) {
     $groups[] = $row;
 }
