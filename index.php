@@ -99,13 +99,13 @@ mysqli_close($link);
         </div>
     </div>
     <div class="row">
-        <div class="col">
-            <input class="form-control mt-3 text-center w-25" type="text" id="cid" name="cid" value=""
+        <div class="col text-break text-center">
+            <input class="form-control mt-3 w-25" type="text" id="cid" name="cid" value=""
                    placeholder="VATSIM-ID"
                    inputmode="numeric" minlength="6" maxlength="7">
-            <div class="text-break text-center">
-                <button class="btn btn-success btn-lg mt-3" type="submit">Rotbanlink generieren</button>
-            </div>
+
+            <button class="btn btn-success btn-lg mt-3" type="submit">Rotbanlink generieren</button>
+
         </div>
     </div>
 </body>
