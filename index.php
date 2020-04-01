@@ -17,7 +17,7 @@ $images = mysqli_fetch_all($images_result, MYSQLI_ASSOC);
 
 
 // Select groups
-$sql = "SELECT * FROM `group` where exists ( select * from `image` where `id_group` = `group`.`id` )";
+$sql = "SELECT * FROM `group` where exists ( select * from `image` where `id_group` = `group`.`id` ) ORDER BY sort ASC";
 $groups_result = mysqli_query($link, $sql);
 $groups = mysqli_fetch_all($groups_result, MYSQLI_ASSOC);
 
