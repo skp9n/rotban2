@@ -109,13 +109,14 @@ mysqli_close($link);
             </div>
         </div>
 </form>
-<div class="container pt-10">
-    <p class="text-sm-center">
-        Service provided by VATSIM-Germany<br>
-        Mail: events (at) vatsim-germany.org<br>
-        Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
-    </p>
-</div>
+<footer>
+    <div class="container pt-10">
+        <p class="text-sm-center">
+            Service provided by VATSIM-Germany<br>
+            Mail: events (at) vatsim-germany.org<br>
+            Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
+        </p>
+    </div>
 </footer>
 <div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
     <div class="modal-dialog" role="document">
