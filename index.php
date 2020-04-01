@@ -33,11 +33,11 @@ mysqli_close($link); ?>
 
   <div class="container overflow-auto">
     <div class="row">
-      <div class="col">
+      <!--<div class="col">
         <label for="sc" style="font-family: 'PT Sans',  sans-serif;width:5cm;">VATSIM-ID</label>
-      </div>
+      </div>-->
       <div class="col">
-        <input class="form-control" type="text" id="cid" name="cid" maxlength="10" value="" inputmode="numeric" style="font-family: 'PT Sans',  sans-serif;width:5cm;" minlength="6" maxlength="7">
+        <input class="form-control" type="text" id="cid" name="cid" maxlength="10" value="" placeholder="VATSIM-ID" inputmode="numeric" style="font-family: 'PT Sans',  sans-serif;width:5cm;" minlength="6" maxlength="7">
       </div>
     </div>
   </div>
