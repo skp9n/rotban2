@@ -100,7 +100,7 @@ mysqli_close($link);
     </div>
     <div class="row">
         <div class="col text-break text-center">
-            <input class="form-control mt-3 w-25" type="text" id="cid" name="cid" value=""
+            <input class="form-control mt-3 w-25 text-center" type="text" id="cid" name="cid" value=""
                    placeholder="VATSIM-ID"
                    inputmode="numeric" minlength="6" maxlength="7">
 
