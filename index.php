@@ -36,7 +36,7 @@ mysqli_close($link); ?>
       <!--<div class="col">
         <label for="sc" style="font-family: 'PT Sans',  sans-serif;width:5cm;">VATSIM-ID</label>
       </div>-->
-      <div class="col-auto">
+      <div class="col-auto col-centered">
         <input class="form-control" type="text" id="cid" name="cid" maxlength="10" value="" placeholder="VATSIM-ID" inputmode="numeric" style="font-family: 'PT Sans',  sans-serif;width:5cm;" minlength="6" maxlength="7">
       </div>
     </div>
