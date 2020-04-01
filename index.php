@@ -6,26 +6,21 @@ server with default setting (user 'root' with no password) */
 // Check connection
 require_once('db_conn.php');
 
-if($link === false){
+if ($link === false) {
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
 // Select images
 $sql = "SELECT * FROM image where active <> 0 ORDER BY sort ASC";
 $images_result = mysqli_query($link, $sql);
-$images = array();
-while ($row = mysqli_fetch_array($images_result)) {
-    $images[] = $row;
-}
+$images = mysqli_fetch_all($images_result, MYSQLI_ASSOC);
+
 
 // Select groups
 $sql = "SELECT * FROM `group` where exists ( select * from `image` where `id_group` = `group`.`id` )";
 $groups_result = mysqli_query($link, $sql);
+$groups = mysqli_fetch_all($groups_result, MYSQLI_ASSOC);
 
-$groups = array();
-while ($row = mysqli_fetch_array($groups_result)) {
-    $groups[] = $row;
-}
 
 var_dump($images);
 //var_dump($groups);
