@@ -40,7 +40,7 @@ mysqli_close($link);
 </head>
 
 <body>
-<div class="container ">
+<div class="container">
     <div class="row">
         <div class="col">
             <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
@@ -60,42 +60,49 @@ mysqli_close($link);
                     <a class="nav-link active font-weight-bold text-vatger-secondary" href="#">TOP</a>
 
                     <?php
-foreach ($groups as $group) {
-    echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#">' . $group['description'] . '</a>';
-}
-?>
+                    foreach ($groups as $group) {
+                        echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#">' . $group['description'] . '</a>';
+                    }
+                    ?>
 
                 </nav>
             </div>
         </div>
         <div class="col">
             <?php
-foreach ($groups as $group) {
-    echo '<div class="container mt-5 justify-content-center" style="min-height: 10cm">';
-    echo '<h3>' . $group['description'] . '</h3>';
-    echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
-    foreach ($images as $image) {
-        echo '<tr>';
-        echo '<td class="align-middle"><div class="form-check text-center">';
-        echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-vatger-secondary" for="formCheck-1">' . $image['description'] . '</label>';
-        echo '</div></td>';
+            foreach ($groups as $group) {
+                echo '<div class="container mt-5 justify-content-center" style="min-height: 10cm">';
+                echo '<h3>' . $group['description'] . '</h3>';
+                echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
+                foreach ($images as $image) {
+                    echo '<tr>';
+                    echo '<td class="align-middle"><div class="form-check text-center">';
+                    echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-vatger-secondary" for="formCheck-1">' . $image['description'] . '</label>';
+                    echo '</div></td>';
 
-        if ($image['uri_preview'] == NULL or $image['uri_preview'] == "") {
-            $uri = $image['uri'];
-        } else {
-            $uri = $image['uri_preview'];
-        }
+                    if ($image['uri_preview'] == NULL or $image['uri_preview'] == "") {
+                        $uri = $image['uri'];
+                    } else {
+                        $uri = $image['uri_preview'];
+                    }
 
-        if ($image['cid_required'] != 0) {
-            echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></td>';
-        } else {
-            echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
-        }
-        echo '</tr>';
-    }
-    echo '</tbody> </table></div></div>';
-}
-?>
+                    if ($image['cid_required'] != 0) {
+                        echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></td>';
+                    } else {
+                        echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
+                    }
+                    echo '</tr>';
+                }
+                echo '</tbody> </table></div></div>';
+            }
+            ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control" type="text" id="cid" name="cid" value="" placeholder="VATSIM-ID"
+                   inputmode="numeric" minlength="6" maxlength="7">
+            <button class="btn btn-success btn-lg" type="submit">Rotbanlink generieren</button>
         </div>
     </div>
 </body>
