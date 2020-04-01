@@ -33,7 +33,7 @@ mysqli_close($link); ?>
 
 <body style="background-color: #2b3089;color: #b9b8b8">
 <div class="container ">
-    <div class="row border-dark">
+    <div class="row">
         <div class="col">
             <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
             <br>
@@ -45,7 +45,7 @@ mysqli_close($link); ?>
         </div>
     </div>
     <div class="row">
-        <div class="col-2 bg-dark">
+        <div class="col-2 border-dark">
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Active</a>
