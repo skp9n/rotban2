@@ -44,8 +44,8 @@ mysqli_close($link); ?>
         </div>
     </div>
     <div class="row">
-        <div class="col bg-secondary rounded ">
-            <ul class="nav justify-content-center mx-auto">
+        <div class="col bg-secondary rounded justify-content-center">
+            <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Active</a>
                 </li>
