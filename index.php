@@ -71,7 +71,7 @@ mysqli_close($link);
             <div class="col">
                 <?php
                 foreach ($groups as $group) {
-                    echo '<div class="container mt-5 justify-content-center" name="' . $groups['id'] . '">';
+                    echo '<div class="container mt-5 justify-content-center" name="' . $group['id'] . '">';
                     echo '<h3>' . $group['description'] . '</h3>';
                     echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
                     foreach ($images as $image) {
