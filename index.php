@@ -43,7 +43,7 @@ mysqli_close($link);
 <form id="rotban_form">
     <div class="container">
         <div class="row">
-            <div class="col" name="top">
+            <div class="col" id="top">
                 <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
                 <br>
                 <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
@@ -71,7 +71,7 @@ mysqli_close($link);
             <div class="col">
                 <?php
                 foreach ($groups as $group) {
-                    echo '<div class="container mt-5 justify-content-center" name="' . $group['id'] . '">';
+                    echo '<div class="container mt-5 justify-content-center" id="' . $group['id'] . '">';
                     echo '<h3>' . $group['description'] . '</h3>';
                     echo '<div class="container ml-2 mt-2" style="min-height: 10cm">';
                     foreach ($images as $image) {
