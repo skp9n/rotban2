@@ -31,5 +31,5 @@ mysqli_close($link); ?>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<img src="assets/img/vacc_logo_white.png" class="mx-auto d-block">
+<img src="assets/img/vacc_logo_white.png" class="mx-auto d-block" style="max-width: 5cm">
 </body>
