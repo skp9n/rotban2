@@ -98,8 +98,7 @@ mysqli_close($link);
                 ?>
             </div>
         </div>
-        <div class="container mt-6"
-        <div class="row align-items-center justify-content-center" id="gen">
+        <div class="row align-items-center justify-content-center mt-6" id="gen">
             <div class="col-3 justify-content-center align-items-center text-center">
                 <input class="form-control mt-3 text-center" type="text" id="cid" name="cid" value=""
                        placeholder="VATSIM-ID"
@@ -107,7 +106,6 @@ mysqli_close($link);
                 <button class="btn btn-success btn-lg mt-3" type="submit">Rotbanlink generieren</button>
             </div>
         </div>
-    </div>
 </form>
 <div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
     <div class="modal-dialog" role="document">
