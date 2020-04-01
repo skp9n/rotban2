@@ -109,22 +109,24 @@ mysqli_close($link);
             </div>
         </div>
 </form>
-<footer class="text-center">
-    <p class="text-sm-center mt-10">
-        Service provided by VATSIM-Germany<br>
-        Mail: events (at) vatsim-germany.org<br>
-        Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
-    </p>
-</footer>
-<div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title text-success">Generierung erfolgreich</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body">
+<div class="text-center">
+    <div class="container">
+        <p class="text-sm-center">
+            Service provided by VATSIM-Germany<br>
+            Mail: events (at) vatsim-germany.org<br>
+            Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
+        </p>
+    </div>
+    </footer>
+    <div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-success">Generierung erfolgreich</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
                 <p class="text-dark">Dies ist dein generierter Rotban Link.</p><input type="text"
                                                                                       style="width: 100%;font-family: 'PT Sans', sans-serif;"
                                                                                       name="rotban_url" id="rotban_url"
