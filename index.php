@@ -32,8 +32,8 @@ mysqli_close($link); ?>
 </head>
 
 <body style="background-color: #2b3089;color: #b9b8b8">
-<div class="container  border-3 border-dark rounded">
-    <div class="row">
+<div class="container ">
+    <div class="row border-3 border-dark rounded">
         <div class="col">
             <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
             <br>
