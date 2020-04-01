@@ -44,7 +44,7 @@ mysqli_close($link); ?>
         </div>
     </div>
     <div class="row border-3 border-secondary rounded">
-        <div class="col-2">
+        <div class="col-2 bg-secondary">
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Active</a>
