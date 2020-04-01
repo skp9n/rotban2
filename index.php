@@ -20,6 +20,9 @@ $sql = "SELECT * FROM `group` where exists ( select * from `image` where `id_gro
 $groups_result = mysqli_query($link, $sql);
 $groups = mysqli_fetch_array($groups_result);
 
+var_dump($images);
+var_dump($groups);
+
 // Close connection
 mysqli_close($link);
 
