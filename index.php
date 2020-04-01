@@ -30,6 +30,6 @@ mysqli_close($link); ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body style="background-color: #2b3089;color: #b9b8b8">
 <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block" style="max-width: 5cm">
 </body>
