@@ -43,9 +43,9 @@ mysqli_close($link); ?>
                 Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
         </div>
     </div>
-    <div class="row border-3 border-secondary rounded">
-        <div class="col-2 bg-secondary">
-            <ul class="nav flex-column">
+    <div class="row">
+        <div class="col bg-secondary rounded">
+            <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Active</a>
                 </li>
@@ -56,12 +56,13 @@ mysqli_close($link); ?>
                     <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            </ul>
+        </div>
+        <div class="col">
+        </div>
     </div>
-    <div class="col">
-    </div>
-</div>
 </div>
 </body>
