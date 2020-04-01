@@ -76,7 +76,7 @@ foreach ($groups as $group) {
     echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
     foreach ($images as $image) {
         echo '<tr>';
-        echo '<td><div class="form-check text-center">';
+        echo '<td><div class="form-check text-center align-middle">';
         echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label" for="formCheck-1">' . $image['description'] . '</label>';
         echo '</div></td>';
 
