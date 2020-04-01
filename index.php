@@ -61,7 +61,7 @@ mysqli_close($link);
 
                         <?php
                         foreach ($groups as $group) {
-                            echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#' . $group . ['id'] . '">' . $group['description'] . '</a>';
+                            echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#' . $group['id'] . '">' . $group['description'] . '</a>';
                         }
                         ?>
                         <a class="nav-link active font-weight-bold text-success" href="#gen">Generieren</a>
@@ -71,7 +71,7 @@ mysqli_close($link);
             <div class="col">
                 <?php
                 foreach ($groups as $group) {
-                    echo '<div class="container mt-5 justify-content-center" name="' . $groups['description'] . '">';
+                    echo '<div class="container mt-5 justify-content-center" name="' . $groups['id'] . '">';
                     echo '<h3>' . $group['description'] . '</h3>';
                     echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
                     foreach ($images as $image) {
