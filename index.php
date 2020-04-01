@@ -33,7 +33,10 @@ mysqli_close($link); ?>
 <body style="background-color: #2b3089;color: #b9b8b8">
 <div class="container">
     <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
-    <h1 class="text-center">My First Bootstrap Page</h1>
-    <p class="text-center">This is some text.</p>
+    <br>
+    <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
+    <p class="text-center">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir einen
+        Link für dein Rotban generieren.<br>
+        Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
 </div>
 </body>
