@@ -99,8 +99,8 @@ mysqli_close($link);
         </div>
     </div>
     <div class="row align-items-center justify-content-center">
-        <div class="col-3 justify-content-center align-items-center">
-            <input class="form-control mt-3 text-center" type="text" id="cid" name="cid" value=""
+        <div class="col-3 justify-content-center align-items-center text-center">
+            <input class="form-control mt-3" type="text" id="cid" name="cid" value=""
                    placeholder="VATSIM-ID"
                    inputmode="numeric" minlength="6" maxlength="7">
             <button class="btn btn-success btn-lg mt-3" type="submit">Rotbanlink generieren</button>
