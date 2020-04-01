@@ -109,15 +109,6 @@ mysqli_close($link);
             </div>
         </div>
 </form>
-<footer>
-    <div class="container pt-10">
-        <p class="text-sm-center">
-            Service provided by VATSIM-Germany<br>
-            Mail: events (at) vatsim-germany.org<br>
-            Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
-        </p>
-    </div>
-</footer>
 <div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -140,6 +131,16 @@ mysqli_close($link);
         </div>
     </div>
 </div>
+</body>
+<footer>
+    <div class="container pt-10">
+        <p class="text-sm-center">
+            Service provided by VATSIM-Germany<br>
+            Mail: events (at) vatsim-germany.org<br>
+            Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
+        </p>
+    </div>
+</footer>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
@@ -165,5 +166,5 @@ mysqli_close($link);
         //alert("Copied the text: " + copyText.value);
     }
 
-    <
-    /body>
+
+
