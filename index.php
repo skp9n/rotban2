@@ -77,7 +77,7 @@ foreach ($groups as $group) {
     foreach ($images as $image) {
         echo '<tr>';
         echo '<td class="align-middle"><div class="form-check text-center">';
-        echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label" for="formCheck-1">' . $image['description'] . '</label>';
+        echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-secondary" for="formCheck-1">' . $image['description'] . '</label>';
         echo '</div></td>';
 
         if ($image['uri_preview'] == NULL or $image['uri_preview'] == "") {
