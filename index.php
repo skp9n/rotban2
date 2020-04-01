@@ -8,9 +8,15 @@ if($link === false){
   die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-// Attempt select query execution
+// Select images
 $sql = "SELECT * FROM image where active <> 0 ORDER BY sort ASC";
 $images_result = mysqli_query($link, $sql);
+
+// Select groups
+$sql = "SELECT * FROM `group` where exists ( select * from `image` where `id_group` = `group`.`id` )";
+$groups_result = mysqli_query($link, $sql);
+
+
 
 // Close connection
 mysqli_close($link); ?>
@@ -52,29 +58,32 @@ mysqli_close($link); ?>
         <tbody>
 
           <?php
-          if(mysqli_num_rows($images_result) > 0){
-            while($row = mysqli_fetch_array($images_result)){
+          if(mysqli_num_rows($groups_result) > 0){            
+            if(mysqli_num_rows($images_result) > 0){
 
-              if($row['uri_preview']==NULL or $row['uri_preview'] == ""){
-                $uri=$row['uri'];
+              while($row = mysqli_fetch_array($images_result)){
+
+                if($row['uri_preview']==NULL or $row['uri_preview'] == ""){
+                  $uri=$row['uri'];
+                }
+                else{
+                  $uri=$row['uri_preview'];
+                }
+                echo "<tr>";
+                echo '<td style="color: #b9b8b8;padding:1cm; width: 10%;"><div class="form-check"><input class="form-check-input" type="checkbox" name=' . $row['id'] . ' id="img' . $row['id'] . '" value="0"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
+                if($row['cid_required']!=0){
+                  echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid","",$uri) . '"/></td>';
+                }
+                else {
+                  echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
+                }
+                echo "</tr>";
               }
-              else{
-                $uri=$row['uri_preview'];
-              }
-              echo "<tr>";
-              echo '<td style="color: #b9b8b8;padding:1cm; width: 10%;"><div class="form-check"><input class="form-check-input" type="checkbox" name=' . $row['id'] . ' id="img' . $row['id'] . '" value="0"><label class="form-check-label" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" for="formCheck-1">' . $row['description'] . '</label></div></td>';
-              if($row['cid_required']!=0){
-                echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid","",$uri) . '"/></td>';
-              }
-              else {
-                echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
-              }
-              echo "</tr>";
+              echo "</table>";
+              // Free result se
+              mysqli_free_result($images_result);
             }
-            echo "</table>";
-            // Free result se
-            mysqli_free_result($images_result);
-          }
+        }
           ?>
 
         </tbody>
