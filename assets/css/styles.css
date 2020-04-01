@@ -1,10 +1,4 @@
-.table-borderless tbody + tbody, .table-borderless td, .table-borderless th, .table-borderless thead th {
-  vertical-align: middle;
-}
-label {
-  font-weight: bold;
-}
-.col-centered{
-    margin: 0 auto;
-    float: none;
+.border-3 {
+    border-style: solid;
+    border-width: 3px;
 }
