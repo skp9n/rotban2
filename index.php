@@ -32,11 +32,11 @@ mysqli_close($link); ?>
   <p class="text-center" style="font-family: 'PT Sans', sans-serif;color: #b9b8b8;padding: 0px;padding-right: 50px;padding-left: 50px;">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir einen Link für dein Rotban generieren.<br> Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
 
   <div class="container overflow-auto">
-    <div class="row">
+    <div class="form-row align-items-center">
       <!--<div class="col">
         <label for="sc" style="font-family: 'PT Sans',  sans-serif;width:5cm;">VATSIM-ID</label>
       </div>-->
-      <div class="col">
+      <div class="col-auto">
         <input class="form-control" type="text" id="cid" name="cid" maxlength="10" value="" placeholder="VATSIM-ID" inputmode="numeric" style="font-family: 'PT Sans',  sans-serif;width:5cm;" minlength="6" maxlength="7">
       </div>
     </div>
