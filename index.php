@@ -13,15 +13,22 @@ if($link === false){
 // Select images
 $sql = "SELECT * FROM image where active <> 0 ORDER BY sort ASC";
 $images_result = mysqli_query($link, $sql);
-$images = mysqli_fetch_array($images_result);
+$images = array();
+while ($row = mysqli_fetch_array($images_result){
+    $images[] = $row;
+}
 
 // Select groups
 $sql = "SELECT * FROM `group` where exists ( select * from `image` where `id_group` = `group`.`id` )";
 $groups_result = mysqli_query($link, $sql);
-$groups = mysqli_fetch_array($groups_result);
 
-//var_dump($images);
-var_dump(array_keys($groups));
+$images = array();
+while ($row = mysqli_fetch_array($groups_result){
+    $groups[] = $row;
+}
+
+var_dump($images);
+var_dump($groups);
 
 // Close connection
 mysqli_close($link);
