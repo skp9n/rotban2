@@ -112,16 +112,14 @@ mysqli_close($link);
 <div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title text-success">Generierung erfolgreich</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body">
-                <p class="text-dark">Dies ist dein generierter Rotban Link.</p><input type="text"
-                                                                                      style="width: 100%;font-family: 'PT Sans', sans-serif;"
-                                                                                      name="rotban_url" id="rotban_url"
-                                                                                      readonly></div>
+            <div class="modal-header">
+                <h4 class="modal-title text-success">Generierung erfolgreich</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-dark">Dies ist dein generierter Rotban Link.</p>
+                <input type="text" name="rotban_url" id="rotban_url" readonly></div>
             <div class="modal-footer">
                 <button onclick="copyToClipboard('#rotban_url')" class="btn btn-primary" type="button">In Zwischenablage
                     kopieren
