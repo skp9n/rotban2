@@ -109,7 +109,7 @@ mysqli_close($link);
             </div>
         </div>
 </form>
-<div class="container mt-10">
+<div class="container pt-10">
     <p class="text-sm-center">
         Service provided by VATSIM-Germany<br>
         Mail: events (at) vatsim-germany.org<br>
