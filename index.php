@@ -13,10 +13,12 @@ if($link === false){
 // Select images
 $sql = "SELECT * FROM image where active <> 0 ORDER BY sort ASC";
 $images_result = mysqli_query($link, $sql);
+$images = mysqli_fetch_array($images_result);
 
 // Select groups
 $sql = "SELECT * FROM `group` where exists ( select * from `image` where `id_group` = `group`.`id` )";
 $groups_result = mysqli_query($link, $sql);
+$groups = mysqli_fetch_array($groups_result);
 
 // Close connection
 mysqli_close($link);
@@ -55,8 +57,8 @@ mysqli_close($link);
                     <a class="nav-link active font-weight-bold text-secondary" href="#">TOP</a>
 
                     <?php
-                    while ($row = mysqli_fetch_array($groups_result)) {
-                        echo '<a class="nav-link active font-weight-bold text-secondary" href="#">' . $row['description'] . '</a>';
+                    foreach ($groups as $group) {
+                        echo '<a class="nav-link active font-weight-bold text-secondary" href="#">' . $group['description'] . '</a>';
                     }
                     ?>
 
@@ -65,11 +67,11 @@ mysqli_close($link);
         </div>
         <div class="col">
             <?php
-            while ($group = mysqli_fetch_array($groups_result)) {
+            foreach ($groups as $group) {
                 echo '<div class="container mt-5 justify-content-center" style="min-height: 10cm">';
                 echo '<h3>' . $group['description'] . '</h3>';
                 echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
-                while ($image = mysqli_fetch_array($images_result)) {
+                foreach ($images as $image) {
                     echo '<tr>';
                     echo '<td><div class="form-check text-center">';
                     echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label" for="formCheck-1">' . $image['description'] . '</label>';
