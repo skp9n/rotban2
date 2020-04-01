@@ -73,13 +73,12 @@ mysqli_close($link);
                 foreach ($groups as $group) {
                     echo '<div class="container mt-5 justify-content-center" name="' . $group['id'] . '">';
                     echo '<h3>' . $group['description'] . '</h3>';
-                    echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
                     foreach ($images as $image) {
                         if ($image['id_group'] == $group['id']) {
-                            echo '<tr>';
-                            echo '<td class="align-middle"><div class="form-check text-center">';
+                            echo '<div class="row">';
+                            echo '<div class="col-2"><div class="form-check text-center">';
                             echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-vatger-secondary" for="formCheck-1">' . $image['description'] . '</label>';
-                            echo '</div></td>';
+                            echo '</div></div>';
 
                             if ($image['uri_preview'] == NULL or $image['uri_preview'] == "") {
                                 $uri = $image['uri'];
@@ -88,14 +87,14 @@ mysqli_close($link);
                             }
 
                             if ($image['cid_required'] != 0) {
-                                echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></td>';
+                                echo '<div class="col"><img max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></div>';
                             } else {
-                                echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
+                                echo '<div class="col"><img max-height="80px" max-width="400px" src="' . $uri . '"/></div>';
                             }
-                            echo '</tr>';
+                            echo '</div>';
                         }
                     }
-                    echo '</tbody> </table></div></div>';
+                    echo '</div>';
                 }
                 ?>
             </div>
