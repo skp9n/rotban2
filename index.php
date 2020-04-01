@@ -32,7 +32,7 @@ mysqli_close($link); ?>
 
 <body>
 <div class="container">
-    <div class="row border-3 border-secondary rounded">
+    <div class="row">
         <div class="col">
             <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
             <br>
@@ -43,7 +43,7 @@ mysqli_close($link); ?>
                 Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
         </div>
     </div>
-    <div class="row">
+    <div class="row border-3 border-secondary rounded">
         <div class="col-2">
             <ul class="nav flex-column">
                 <li class="nav-item">
