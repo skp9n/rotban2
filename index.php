@@ -57,8 +57,6 @@ mysqli_close($link);
                 <div class="container pt-5 sticky">
                     <nav class="nav flex-column flex-fill border-3 rounded">
 
-                        <a class="nav-link active font-weight-bold text-vatger-secondary" href="#top">TOP</a>
-
                         <?php
                         foreach ($groups as $group) {
                             echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#' . $group['id'] . '">' . $group['description'] . '</a>';
