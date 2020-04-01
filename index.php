@@ -40,70 +40,129 @@ mysqli_close($link);
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
-            <br>
-            <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
-            <p class="text-center">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse dir
-                einen
-                Link für dein Rotban generieren.<br>
-                Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-2">
-            <div class="container pt-5 sticky">
-                <nav class="nav flex-column flex-fill border-3 rounded">
-
-                    <a class="nav-link active font-weight-bold text-vatger-secondary" href="#">TOP</a>
-
-                    <?php
-                    foreach ($groups as $group) {
-                        echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#">' . $group['description'] . '</a>';
-                    }
-                    ?>
-
-                </nav>
+<form id="rotban_form">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5" style="max-width: 5cm">
+                <br>
+                <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
+                <p class="text-center">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse
+                    dir
+                    einen
+                    Link für dein Rotban generieren.<br>
+                    Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
             </div>
         </div>
-        <div class="col">
-            <?php
-            foreach ($groups as $group) {
-                echo '<div class="container mt-5 justify-content-center" style="min-height: 10cm">';
-                echo '<h3>' . $group['description'] . '</h3>';
-                echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
-                foreach ($images as $image) {
-                    echo '<tr>';
-                    echo '<td class="align-middle"><div class="form-check text-center">';
-                    echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-vatger-secondary" for="formCheck-1">' . $image['description'] . '</label>';
-                    echo '</div></td>';
+        <div class="row">
+            <div class="col-2">
+                <div class="container pt-5 sticky">
+                    <nav class="nav flex-column flex-fill border-3 rounded">
 
-                    if ($image['uri_preview'] == NULL or $image['uri_preview'] == "") {
-                        $uri = $image['uri'];
-                    } else {
-                        $uri = $image['uri_preview'];
-                    }
+                        <a class="nav-link active font-weight-bold text-vatger-secondary" href="#">TOP</a>
 
-                    if ($image['cid_required'] != 0) {
-                        echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></td>';
-                    } else {
-                        echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
+                        <?php
+                        foreach ($groups as $group) {
+                            echo '<a class="nav-link active font-weight-bold text-vatger-secondary" href="#">' . $group['description'] . '</a>';
+                        }
+                        ?>
+
+                    </nav>
+                </div>
+            </div>
+            <div class="col">
+                <?php
+                foreach ($groups as $group) {
+                    echo '<div class="container mt-5 justify-content-center" style="min-height: 10cm">';
+                    echo '<h3>' . $group['description'] . '</h3>';
+                    echo '<div class="table-responsive"><table class="table table-borderless w-auto"><tbody>';
+                    foreach ($images as $image) {
+                        echo '<tr>';
+                        echo '<td class="align-middle"><div class="form-check text-center">';
+                        echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-vatger-secondary" for="formCheck-1">' . $image['description'] . '</label>';
+                        echo '</div></td>';
+
+                        if ($image['uri_preview'] == NULL or $image['uri_preview'] == "") {
+                            $uri = $image['uri'];
+                        } else {
+                            $uri = $image['uri_preview'];
+                        }
+
+                        if ($image['cid_required'] != 0) {
+                            echo '<td><img max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></td>';
+                        } else {
+                            echo '<td><img max-height="80px" max-width="400px" src="' . $uri . '"/></td>';
+                        }
+                        echo '</tr>';
                     }
-                    echo '</tr>';
+                    echo '</tbody> </table></div></div>';
                 }
-                echo '</tbody> </table></div></div>';
-            }
-            ?>
+                ?>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-3 justify-content-center align-items-center text-center">
+                <input class="form-control mt-3 text-center" type="text" id="cid" name="cid" value=""
+                       placeholder="VATSIM-ID"
+                       inputmode="numeric" minlength="6" maxlength="7">
+                <button class="btn btn-success btn-lg mt-3" type="submit">Rotbanlink generieren</button>
+            </div>
+        </div>
+</form>
+<footer class="text-center mt-10">
+    <img class="img-fluid" src="assets/img/vacc_logo_white.png" style="width: 400px;"/>
+    <p class="text-sm-center">
+        Service provided by VATSIM-Germany<br>
+        Mail: events (at) vatsim-germany.org<br>
+        Developed by Paul Hollmann, Sebastian Kramer, Sebastian Klietz.
+    </p>
+</footer>
+<div class="modal fade" role="dialog" tabindex="-1" id="LinkModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-success">Generierung erfolgreich</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-dark">Dies ist dein generierter Rotban Link.</p><input type="text"
+                                                                                      style="width: 100%;font-family: 'PT Sans', sans-serif;"
+                                                                                      name="rotban_url" id="rotban_url"
+                                                                                      readonly></div>
+            <div class="modal-footer">
+                <button onclick="copyToClipboard('#rotban_url')" class="btn btn-primary" type="button">In Zwischenablage
+                    kopieren
+                </button>
+                <button class="btn btn-light" type="button" data-dismiss="modal">Schließen</button>
+            </div>
         </div>
     </div>
-    <div class="row align-items-center justify-content-center">
-        <div class="col-3 justify-content-center align-items-center text-center">
-            <input class="form-control mt-3 text-center" type="text" id="cid" name="cid" value=""
-                   placeholder="VATSIM-ID"
-                   inputmode="numeric" minlength="6" maxlength="7">
-            <button class="btn btn-success btn-lg mt-3" type="submit">Rotbanlink generieren</button>
-        </div>
-    </div>
-</body>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/bs-init.js"></script>
+<script type="text/javascript">$(document).ready(function () {
+        $('#rotban_form').submit(function (event) {
+            event.preventDefault();
+            $.post("./create_url.php", $("#rotban_form").serializeArray()).done(function (data) {
+                $("#rotban_url").attr("value", data);
+                $('#LinkModal').modal('show');
+            });
+            ;
+        });
+    });
+
+    function copyToClipboard(element) {
+        var copyText = document.getElementById("rotban_url");
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        /* Alert the copied text */
+        //alert("Copied the text: " + copyText.value);
+    }
+
+    <
+    /body>
