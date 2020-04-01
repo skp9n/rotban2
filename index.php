@@ -11,7 +11,7 @@ if ($link === false) {
 }
 
 // Select images
-$sql = "SELECT * FROM image where active <> 0 ORDER BY sort ASC";
+$sql = "SELECT * FROM image where active <> 0 ORDER BY id_group ASC, sort ASC";
 $images_result = mysqli_query($link, $sql);
 $images = mysqli_fetch_all($images_result, MYSQLI_ASSOC);
 
