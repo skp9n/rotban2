@@ -44,9 +44,9 @@ mysqli_close($link);
     <div class="container">
         <div class="row">
             <div class="col" id="top">
-                <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5">
+                <img src="assets/img/vacc_logo_white.png" class="mx-auto d-block pt-5 w-auto">
                 <br>
-                <h1 class="text-center">VATSIM Germany RotBan 2.0</h1>
+                <h1 class="text-center">RotBan 2.0</h1>
                 <p class="text-center">Wähle aus den folgenden vefügbaren Bannern eine beliebige Kombination und lasse
                     dir einen Link für dein Rotban generieren.<br>
                     Für die Verwendung von Online-Indicators wird deine VATSIM-ID benötigt.</p>
