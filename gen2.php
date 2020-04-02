@@ -29,6 +29,7 @@ if (mysqli_num_rows($images_result) > 0) {
     while ($row = mysqli_fetch_array($images_result)) {
         //echo $row['uri'];
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
+        $uri = rtrim($uri, "/");
 
         $log = "Uri: ${uri}\n";
         file_put_contents('./images.log', $log, FILE_APPEND);
