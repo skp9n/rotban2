@@ -30,13 +30,15 @@ if (mysqli_num_rows($images_result) > 0) {
         //echo $row['uri'];
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
 
-        $log = "Uri: ${uri}\n\n";
+        $log = "Uri: ${uri}\n";
         file_put_contents('./images.log', $log, FILE_APPEND);
 
-        $imginfo = getimagesize($uri);
-        $log = "Mime: ${$imginfo['mime']}\n\n";
+        $mime = $mime = image_type_to_mime_type(exif_imagetype($uri));
+
+        $log = "Mime: ${mime}\n\n";
         file_put_contents('./images.log', $log, FILE_APPEND);
-        header("Content-type: " . $imginfo['mime']);
+
+        header("Content-type: " . $mime);
         readfile($uri);
     }  // Free result se
 } else {
