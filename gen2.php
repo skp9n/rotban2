@@ -4,7 +4,7 @@
 //$images=explode("_",substr($_GET['img'], 1) );
 
 $cid = "1331358";
-$images = explode("_", substr("_6", 1));
+$images = explode("_", substr("_1_2_3_4_5_6", 1));
 
 $random = mt_rand(0, sizeof($images) - 1);
 
