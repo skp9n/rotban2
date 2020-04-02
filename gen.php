@@ -1,16 +1,20 @@
 <?php
 
-$cid=$_GET['cid'];
-$images=explode("_",substr($_GET['img'], 1) );
+//$cid=$_GET['cid'];
+//$images=explode("_",substr($_GET['img'], 1) );
 
-//echo $images;
+$cid = "1331358";
+$images = explode("_", substr("_1_2_3_4_5_6", 1));
 
-$random = mt_rand(0,sizeof($images) - 1 );
+$random = mt_rand(0, sizeof($images) - 1);
+
+$log = "Random: ${random}\n";
+file_put_contents('./images.log', $log, FILE_APPEND);
 
 require_once('db_conn.php');
 
-if($link === false){
-  die("ERROR: Could not connect. " . mysqli_connect_error());
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
 // Attempt select query execution
@@ -21,12 +25,16 @@ $images_result = mysqli_query($link, $sql);
 // Close connection
 mysqli_close($link);
 
-if(mysqli_num_rows($images_result) > 0){
-  while($row = mysqli_fetch_array($images_result)){
-      //echo $row['uri'];
-      header("Location: " . str_replace("\$cid", urlencode($cid), $row['uri']));
-  }  // Free result se
+if (mysqli_num_rows($images_result) > 0) {
+    while ($row = mysqli_fetch_array($images_result)) {
+
+        $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
+        $mime = image_type_to_mime_type(exif_imagetype($uri));
+        header("Content-type: " . $mime);
+        readfile($uri);
+    }
 } else {
-    // code...
+
 }
+
 mysqli_free_result($images_result);
