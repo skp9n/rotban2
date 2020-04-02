@@ -36,6 +36,9 @@ if (mysqli_num_rows($images_result) > 0) {
 
         $mime = $mime = image_type_to_mime_type(exif_imagetype($uri));
 
+        if ($mime == "application/octet-stream")
+            $mime = "image/png";
+
         $log = "Mime: ${mime}\n\n";
         file_put_contents('./images.log', $log, FILE_APPEND);
 
