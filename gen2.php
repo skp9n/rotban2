@@ -8,6 +8,9 @@ $images = explode("_", substr("_1_2_3_4_5_6", 1));
 
 $random = mt_rand(0, sizeof($images) - 1);
 
+$log = "Random: ${random}\n";
+file_put_contents('./images.log', $log, FILE_APPEND);
+
 require_once('db_conn.php');
 
 if ($link === false) {
@@ -26,6 +29,9 @@ if (mysqli_num_rows($images_result) > 0) {
     while ($row = mysqli_fetch_array($images_result)) {
         //echo $row['uri'];
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
+
+        $log = "Uri: ${uri}\n\n";
+        file_put_contents('./images.log', $log, FILE_APPEND);
 
         $imginfo = getimagesize($uri);
         header("Content-type: " . $imginfo['mime']);
