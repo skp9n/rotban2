@@ -30,7 +30,10 @@ if (mysqli_num_rows($images_result) > 0) {
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
         echo "Uri: ${uri}";
 
-        echo mime_content_type($uri);
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mtype = finfo_file($finfo, $uri);
+        finfo_close($finfo);
+        echo $mtype;
         //header("Location: " . str_replace("\$cid", urlencode($cid), $row['uri']));
     }  // Free result se
 } else {
