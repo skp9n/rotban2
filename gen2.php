@@ -34,7 +34,7 @@ if (mysqli_num_rows($images_result) > 0) {
         file_put_contents('./images.log', $log, FILE_APPEND);
 
         $imginfo = getimagesize($uri);
-        $log = "Mime: ${uri}\n\n";
+        $log = "Mime: ${$imginfo['mime']}\n\n";
         file_put_contents('./images.log', $log, FILE_APPEND);
         header("Content-type: " . $imginfo['mime']);
         readfile($uri);
