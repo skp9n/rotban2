@@ -28,11 +28,17 @@ if (mysqli_num_rows($images_result) > 0) {
     while ($row = mysqli_fetch_array($images_result)) {
         //echo $row['uri'];
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
-        echo "Uri: ${uri}";
+        $mime = image_type_to_mime_type(exif_imagetype($uri));
+        $im = imagecreatefromstring(file_get_contents($uri));
+        header('Content-type:' . $mime);
 
-       	$imagetype = image_type_to_mime_type(exif_imagetype($uri));
-	echo "Typ: ${imagetype}";
-        //header("Location: " . str_replace("\$cid", urlencode($cid), $row['uri']));
+        if ($mime == "image/gif") {
+            imagegif($im);
+        } else {
+            imagepng($im);
+        }
+
+        imagedestroy($im);
     }  // Free result se
 } else {
     // code...
