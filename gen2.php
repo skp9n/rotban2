@@ -4,8 +4,8 @@
 //$images=explode("_",substr($_GET['img'], 1) );
 
 $cid = "1331358";
-$images = $images = explode("_", substr("https://rotban2.vatsim-germany.org/gen.php?img=_6", 1));
-
+$images = explode("_", substr("https://rotban2.vatsim-germany.org/gen.php?img=_6", 1));
+var_dump($images);
 //echo $images;
 
 $random = mt_rand(0, sizeof($images) - 1);
