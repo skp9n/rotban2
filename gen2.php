@@ -30,7 +30,8 @@ if (mysqli_num_rows($images_result) > 0) {
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
         echo "Uri: ${uri}";
 
-       echo exif_imagetype($uri);
+       	$imagetype = image_type_to_mime_type(exif_imagetype($uri));
+	echo "Typ: ${imagetype}";
         //header("Location: " . str_replace("\$cid", urlencode($cid), $row['uri']));
     }  // Free result se
 } else {
