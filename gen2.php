@@ -27,25 +27,14 @@ mysqli_close($link);
 
 if (mysqli_num_rows($images_result) > 0) {
     while ($row = mysqli_fetch_array($images_result)) {
-        //echo $row['uri'];
+
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
-        $uri = rtrim($uri, "/");
-
-        $log = "Uri: ${uri}\n";
-        file_put_contents('./images.log', $log, FILE_APPEND);
-
-        $mime = $mime = image_type_to_mime_type(exif_imagetype($uri));
-
-        if ($mime == "application/octet-stream")
-            $mime = "image/png";
-
-        $log = "Mime: ${mime}\n\n";
-        file_put_contents('./images.log', $log, FILE_APPEND);
-
+        $mime = image_type_to_mime_type(exif_imagetype($uri));
         header("Content-type: " . $mime);
         readfile($uri);
-    }  // Free result se
+    }
 } else {
-    // code...
+
 }
+
 mysqli_free_result($images_result);
