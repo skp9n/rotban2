@@ -5,8 +5,6 @@
 
 $cid = "1331358";
 $images = explode("_", substr("_6", 1));
-var_dump($images);
-//echo $images;
 
 $random = mt_rand(0, sizeof($images) - 1);
 
@@ -29,7 +27,6 @@ if (mysqli_num_rows($images_result) > 0) {
         //echo $row['uri'];
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
 
-        echo $uri;
         $imginfo = getimagesize($uri);
         header("Content-type: " . $imginfo['mime']);
         readfile($uri);
