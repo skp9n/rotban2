@@ -26,7 +26,7 @@ if (mysqli_num_rows($images_result) > 0) {
     while ($row = mysqli_fetch_array($images_result)) {
 
         $uri = str_replace("\$cid", urlencode($cid), $row['uri']);
-        $mime = image_type_to_mime_type(exif_imagetype($uri));
+        $mime = getimagesize($uri)['mime'];
         header("Content-type: " . $mime);
         readfile($uri);
     }
