@@ -75,7 +75,7 @@ mysqli_close($link);
                     foreach ($images as $image) {
                         if ($image['id_group'] == $group['id']) {
                             echo '<div class="row mt-2">';
-                            echo '<div class="col-2"><div class="form-check">';
+                            echo '<div class="col-2 justify-content-center align-items-center"><div class="form-check">';
                             echo '<input class="form-check-input" type="checkbox" name=' . $image['id'] . ' id="img' . $image['id'] . '" value="0"><label class="form-check-label font-weight-bold text-vatger-secondary" for="formCheck-1">' . $image['description'] . '</label>';
                             echo '</div></div>';
 
