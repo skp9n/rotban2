@@ -86,9 +86,9 @@ mysqli_close($link);
                             }
 
                             if ($image['cid_required'] != 0) {
-                                echo '<div class="col"><img style="border:5px solid black" max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></div>';
+                                echo '<div class="col"><img style="border:1px solid black" max-height="80px" max-width="400px" src="' . str_replace("\$cid", "", $uri) . '"/></div>';
                             } else {
-                                echo '<div class="col"><img style="border:5px solid black" max-height="80px" max-width="400px" src="' . $uri . '"/></div>';
+                                echo '<div class="col"><img style="border:1px solid black" max-height="80px" max-width="400px" src="' . $uri . '"/></div>';
                             }
                             echo '</div>';
                         }
